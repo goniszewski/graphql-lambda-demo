@@ -1,28 +1,12 @@
 import { characters } from "../json/characters.json";
 import { CharacterModel } from "../models";
 import { Character } from "../types";
+import { returnMutationResponse } from "../utils";
 import {
   validateCharacterNotExists,
   validateEpisodes,
   validatePlanet,
 } from "../validators";
-
-function returnMutationResponse<T, S extends string>(
-  success: boolean,
-  message: string,
-  object: Record<S, T>
-): {
-  code: number;
-  success: boolean;
-  message: string;
-} & Record<S, T | null> {
-  return {
-    code: success ? 200 : 400,
-    success,
-    message,
-    ...object,
-  };
-}
 
 export class JsonAPI {
   local = [...characters];

@@ -1,7 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import { JsonAPI } from "./json-api";
 import { characters } from "../json/characters.json";
-import { CharacterModel } from "../models";
 
 describe("JsonAPI", () => {
   describe("getCharacters", () => {
